@@ -57,12 +57,11 @@ console.log(reverseString("abcde")); */
 
 //Implementation 6 : Recursion with substring and charAt (Important)
 
-function reverseString(str) {
+function reverseStr(str) {
   if (str === "") {
     return "";
   }
-
-  return reverseString(str.substr(1)) + str.charAt(0);
+  return reverseStr(str.substr(1)) + str.charAt(0);
 }
 
-console.log(reverseString("abcde"));
+console.log(reverseStr("abcde"));
