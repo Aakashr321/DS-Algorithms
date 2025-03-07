@@ -18,6 +18,8 @@ let t2 = performance.now();
 
 console.log(`Time Elapsed: ${(t2 - t1) / 1000}seconds.`);
 
+/* Big O is a way of formalize fuzzy counting */
+
 /* BigO can be linear, quadratic, constant or it can be entirely different */
 
 /* Big O Shorthands */
@@ -29,3 +31,10 @@ console.log(`Time Elapsed: ${(t2 - t1) / 1000}seconds.`);
 */
 
 /* Auxiliary space complexity refers to the space required by the algorithm, Not including space taken up by the inputs. */
+
+/* 
+f(n) could be linear (f(n)=n)
+f(n) could be quadratic (f(n)=n2)
+f(n) could be constant (f(n)=1)
+f(n) could be something entirely different
+*/
