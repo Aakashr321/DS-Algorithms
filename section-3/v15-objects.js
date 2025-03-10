@@ -11,6 +11,7 @@
 // When you don't need any ordering, objects are very useful.
 
 /* 
+Big O of Object Methods
 
 Object.keys - O(n)
 Object.values - O(n)

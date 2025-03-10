@@ -18,3 +18,6 @@
 11. sort : O(n*log n)
 12. forEach/map/filter/reduce/etc. : O(n)
 */
+
+let names = ["Michael", "Melissa", "Andrea"];
+let values = [true, {}, [], 2, "awesome"];
