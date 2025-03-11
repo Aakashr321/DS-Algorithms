@@ -1,4 +1,5 @@
 // Problem solving
+// Algorithm is a process or set of steps to accomplish a certain task.
 
 /* 
 1.Understand the problem.
@@ -21,17 +22,34 @@
 
 /* Write a function which takes in a string and counts each character in a string. */
 
-function charCount(str) {
-  const chars = str.replace(/\s+/g, "").toLowerCase().split("");
+// function charCount(str) {
+//   const chars = str.replace(/\s+/g, "").toLowerCase().split("");
+//   let result = {};
+//   chars.forEach((el, index) => {
+//     if (result.hasOwnProperty(el)) {
+//       result[el]++;
+//     } else {
+//       result[el] = 1;
+//     }
+//   });
+//   return result;
+// }
+
+// console.log(charCount("This is a character"));
+
+function countChars(str) {
+  let chars = str.replace(/\s+/g, "").toLowerCase().split("");
   let result = {};
-  chars.forEach((el, index) => {
+
+  for (let i = 0; i < chars.length; i++) {
+    let el = chars[i];
     if (result.hasOwnProperty(el)) {
       result[el]++;
     } else {
       result[el] = 1;
     }
-  });
+  }
   return result;
 }
 
-console.log(charCount("This is a character"));
+console.log(countChars("This is a character"));
