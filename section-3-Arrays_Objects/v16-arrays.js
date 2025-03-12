@@ -21,3 +21,32 @@
 
 let names = ["Michael", "Melissa", "Andrea"];
 let values = [true, {}, [], 2, "awesome"];
+
+// function flattenArray(array) {
+//   let newArr = [];
+
+//   array.forEach((arr, index) => {
+//     if (Array.isArray(arr)) {
+//       newArr.push(...flattenArray(arr));
+//     } else {
+//       newArr.push(arr);
+//     }
+//   });
+//   return newArr;
+// }
+
+// console.log(flattenArray([1, [2, [3, 4], 5], 6, [7, 8]]));
+
+function removeDuplicates(str) {
+  let arr = str.split("");
+  let newStr = [];
+
+  arr.forEach((el, index) => {
+    if (arr.indexOf(el) === index) {
+      newStr.push(el);
+    }
+  });
+  return newStr.join("");
+}
+
+console.log(removeDuplicates("abccde"));
