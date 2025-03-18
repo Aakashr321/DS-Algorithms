@@ -11,3 +11,20 @@ A process (a function in our case) that calls itself.
 
 /* Invoke the same function with a different input until
 you reach your base case. */
+
+/* Two essential parts of a recursive function!
+    1. Base Case
+    2. Different Input
+*/
+
+function countDown(num) {
+  if (num <= 0) {
+    console.log("all done");
+    return;
+  }
+  console.log(num);
+  num--;
+  return countDown(num);
+}
+
+countDown(25);
