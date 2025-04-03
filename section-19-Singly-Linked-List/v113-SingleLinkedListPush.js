@@ -48,6 +48,3 @@ class SinglyLinkedList {
 }
 
 list = new SinglyLinkedList();
-list.push("Hello");
-
-console.log(list);
