@@ -1,12 +1,11 @@
-/* Insert pseudocode:Adding a new Node to linked list at a specific position.
-=> If the index is less than zero or greater than the length, return false.
-=> If the index is the same as the length, push a new node to the end of the list.
-=> If the index is 0, unshift a new node to the start of the list.
+/* Remove pseudocode:Removing a Node to linked list at a specific position.
+=> If the index is less than zero or greater than the length, return undefined.
+=> If the index is the same as the length - 1, pop.
+=>  If the index is 0 , shift.
 => Otherwise, using the get method, access the node at the index -1.
-=> Set the next property on that node to be the new Node.
-=> Set the next property on the new node to be the new next.
-=> Increment the length
-=> Return true
+=> Set the next property on that node to be the next of the next node.
+=> Decrement the length.
+=> Return the value of the node removed.
 */
 
 class Node {
@@ -112,6 +111,18 @@ class SinglyLinkedList {
     previousNode.next = newNode;
     this.length++;
     return true;
+  }
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    if (index === this.length - 1) return this.pop();
+
+    if (index === 0) return this.shift();
+    let prevNode = this.get(index - 1);
+    let currentNode = prevNode.next;
+    prevNode.next = currentNode.next;
+    this.length--;
+    return currentNode.value;
   }
 }
 

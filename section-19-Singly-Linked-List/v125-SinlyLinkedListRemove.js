@@ -1,12 +1,13 @@
-/* Insert pseudocode:Adding a new Node to linked list at a specific position.
-=> If the index is less than zero or greater than the length, return false.
-=> If the index is the same as the length, push a new node to the end of the list.
-=> If the index is 0, unshift a new node to the start of the list.
-=> Otherwise, using the get method, access the node at the index -1.
-=> Set the next property on that node to be the new Node.
-=> Set the next property on the new node to be the new next.
-=> Increment the length
-=> Return true
+/* Reverse pseudocode:Reversing the Linked list in place.
+=> Swap the head and tail
+=> Create a variable called next
+=> Create a variable called prev
+=> Create a variable called node and initialize it to the head property
+=> Loop through the list
+=> Set the next to be the next property on whatever node is
+=> Set the next property on the node to be whatever prev is
+=> Set the prev to be the value of the node variable
+=> Set the node variable to be the value of the next variable
 */
 
 class Node {
@@ -112,6 +113,33 @@ class SinglyLinkedList {
     previousNode.next = newNode;
     this.length++;
     return true;
+  }
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    if (index === this.length - 1) return this.pop();
+
+    if (index === 0) return this.shift();
+    let prevNode = this.get(index - 1);
+    let currentNode = prevNode.next;
+    prevNode.next = currentNode.next;
+    this.length--;
+    return currentNode.value;
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let prev = null;
+    let next;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
