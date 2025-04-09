@@ -122,7 +122,37 @@ class SinglyLinkedList {
     let currentNode = prevNode.next;
     prevNode.next = currentNode.next;
     this.length--;
-    return currentNode.value;
+    return currentNode;
+  }
+  rotate(k) {
+    if (!this.head || this.length <= 1 || k === 0) return;
+
+    // Normalize k to avoid unnecessary rotations
+    k = k % this.length;
+    if (k === 0) return;
+
+    let current = this.head;
+    let tail = null;
+
+    // Find the tail of the list
+    while (current.next) {
+      current = current.next;
+    }
+    tail = current;
+
+    // Connect the tail to the head to make it circular
+    tail.next = this.head;
+
+    // Find the new tail: (length - k - 1)th node
+    let newTail = this.head;
+    for (let i = 0; i < this.length - k - 1; i++) {
+      newTail = newTail.next;
+    }
+
+    // The new head will be the next node after the new tail
+    this.head = newTail.next;
+    // Break the circular connection
+    newTail.next = null;
   }
 }
 
