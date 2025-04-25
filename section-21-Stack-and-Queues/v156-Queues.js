@@ -56,7 +56,6 @@ class Queue {
   dequeue() {
     if (!this.first) return undefined;
     let current = this.first;
-    this.first = current.next;
     if (this.first === this.last) {
       this.last = null;
     } else {
